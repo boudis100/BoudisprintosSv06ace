@@ -1,0 +1,25 @@
+{
+    "name": "Údržba",
+    "buttons": [
+        {
+            "name": "🧹 Vyčistit trysku",
+            "gcode": "CLEAN_NOZZLE"
+        },
+        {
+            "name": "🧲 Zkontrolovat šrouby",
+            "gcode": "TIGHTEN_BOLTS"
+        },
+        {
+            "name": "🛢️ Promazat osy",
+            "gcode": "LUBRICATE_AXES"
+        },
+        {
+            "name": "🧪 Test extruderu",
+            "gcode": "TEST_EXTRUDER"
+        },
+        {
+            "name": "📐 Zarovnat osu X",
+            "gcode": "CHECK_X_LEVEL"
+        }
+    ]
+}
