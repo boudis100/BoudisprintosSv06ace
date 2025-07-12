@@ -1,1 +1,3 @@
-
+[shell_command UPDATE_OS]
+command: bash /home/pi/klipper_config/update.sh
+timeout: 60
