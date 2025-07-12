@@ -1,0 +1,59 @@
+{
+  "widgets": [
+    {
+      "type": "macro",
+      "title": "\ud83d\udd25 P\u0159edeh\u0159evy",
+      "macros": [
+        {
+          "name": "PREHEAT_PLA",
+          "label": "PLA"
+        },
+        {
+          "name": "PREHEAT_PETG",
+          "label": "PETG"
+        },
+        {
+          "name": "PREHEAT_ASA",
+          "label": "ASA"
+        }
+      ],
+      "style": "primary"
+    },
+    {
+      "type": "macro",
+      "title": "\ud83e\uddfc \u010ci\u0161t\u011bn\u00ed trysky",
+      "macros": [
+        {
+          "name": "CLEAN_NOZZLE",
+          "label": "Vy\u010distit"
+        }
+      ],
+      "style": "secondary"
+    },
+    {
+      "type": "macro",
+      "title": "\ud83d\udeab Nouzov\u00e9 akce",
+      "macros": [
+        {
+          "name": "PAUSE",
+          "label": "Pozastavit"
+        },
+        {
+          "name": "RESUME",
+          "label": "Pokra\u010dovat"
+        },
+        {
+          "name": "CANCEL_PRINT",
+          "label": "Zru\u0161it tisk"
+        }
+      ],
+      "style": "danger"
+    },
+    {
+      "type": "iframe",
+      "title": "\ud83d\udcf2 Instagram QR k\u00f3d",
+      "url": "/config/themes/boudisprint/splash.png",
+      "height": 200
+    }
+  ]
+}
