@@ -1,0 +1,13 @@
+{
+    "name": "Input Shaping",
+    "buttons": [
+        {
+            "name": "📐 Run SHAPER_CALIBRATE",
+            "gcode": "SHAPER_CALIBRATE"
+        },
+        {
+            "name": "📊 Save Results",
+            "gcode": "SAVE_SHAPER_CALIBRATE"
+        }
+    ]
+}
