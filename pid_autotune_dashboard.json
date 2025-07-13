@@ -1,0 +1,13 @@
+{
+    "name": "PID Autotune",
+    "buttons": [
+        {
+            "name": "📈 Kalibrovat trysku",
+            "gcode": "PID_CAL_E"
+        },
+        {
+            "name": "📉 Kalibrovat bed",
+            "gcode": "PID_CAL_B"
+        }
+    ]
+}
