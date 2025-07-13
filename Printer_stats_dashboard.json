@@ -1,0 +1,17 @@
+{
+  "name": "📊 Statistiky tisku",
+  "buttons": [
+    {
+      "name": "🆕 Nový výtisk dokončen",
+      "gcode": "INCREMENT_PRINT_COUNT"
+    },
+    {
+      "name": "♻️ Reset výtisků (údržba)",
+      "gcode": "RESET_PRINT_COUNT"
+    },
+    {
+      "name": "📋 Zobrazit statistiky",
+      "gcode": "DISPLAY_STATS"
+    }
+  ]
+}
