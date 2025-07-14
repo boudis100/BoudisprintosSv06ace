@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoudisprintOS – Community Edition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 100px;
+        }
+        h1 {
+            color: #3aa6ff;
+        }
+        .content {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .lang-switch {
+            text-align: right;
+            margin: 10px 20px 0 0;
+        }
+        a.button {
+            background: #3aa6ff;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: inline-block;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+        }
+    </style>
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('[lang]').forEach(el => {
+                el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
+            });
+        }
+    </script>
+</head>
+<body onload="switchLang('cs')">
+    <header>
+        <img src="logo.png" alt="BoudisprintOS Logo">
+        <h1>BoudisprintOS – Community Edition</h1>
+        <div class="lang-switch">
+            <a href="#" onclick="switchLang('cs')">Čeština</a> | 
+            <a href="#" onclick="switchLang('en')">English</a>
+        </div>
+    </header>
+
+    <div class="content">
+        <div lang="cs">
+            <h2>O projektu</h2>
+            <p>BoudisprintOS je komunitní rozšíření firmwaru Klipper pro tiskárny Sovol SV06 Ace a SV07. Nabízí optimalizované rozhraní, automatizace a nové funkce pro zkušené uživatele.</p>
+
+            <h2>Funkce</h2>
+            <ul>
+                <li>Optimalizované Fluidd rozhraní (modro-černé téma)</li>
+                <li>Input Shaping s podporou ADXL345</li>
+                <li>PID Autotune</li>
+                <li>Notifikace (např. e-mail, MQTT)</li>
+                <li>OTA aktualizace</li>
+                <li>Komunitní startovací obrazovka</li>
+            </ul>
+
+            <h2>Instalace</h2>
+            <p>Projekt najdete na GitHubu:</p>
+            <a class="button" href="https://github.com/boudis100/BoudisprintosSv06ace" target="_blank">Otevřít GitHub</a>
+            <br>
+            <a class="button" href="https://github.com/boudis100/BoudisprintosSv06ace/blob/main/printer.cfg" target="_blank">Stáhnout printer.cfg</a>
+        </div>
+
+        <div lang="en" style="display:none;">
+            <h2>About the project</h2>
+            <p>BoudisprintOS is a community Klipper firmware enhancement for Sovol SV06 Ace and SV07 printers. It provides an optimized interface, automation tools, and advanced features for experienced users.</p>
+
+            <h2>Features</h2>
+            <ul>
+                <li>Optimized Fluidd interface (blue-black theme)</li>
+                <li>Input Shaping support (ADXL345)</li>
+                <li>PID Autotune</li>
+                <li>Notifications (e.g., email, MQTT)</li>
+                <li>OTA updates</li>
+                <li>Community welcome screen</li>
+            </ul>
+
+            <h2>Installation</h2>
+            <p>You can find the project on GitHub:</p>
+            <a class="button" href="https://github.com/boudis100/BoudisprintosSv06ace" target="_blank">View on GitHub</a>
+            <br>
+            <a class="button" href="https://github.com/boudis100/BoudisprintosSv06ace/blob/main/printer.cfg" target="_blank">Download printer.cfg</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Miroslav Bouda – BoudisprintOS Community Edition
+    </footer>
+</body>
+</html>
