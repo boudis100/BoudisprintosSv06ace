@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>BoudisprintOS – Konfigurátor printer.cfg</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+        h1 { color: #3aa6ff; }
+        label, select { display: block; margin: 10px 0; }
+        textarea { width: 100%; height: 300px; background: #222; color: #0f0; font-family: monospace; }
+        button { background: #3aa6ff; border: none; padding: 10px 20px; color: white; cursor: pointer; margin-top: 20px; }
+        .footer { margin-top: 30px; font-size: 0.9em; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>BoudisprintOS – Konfigurátor printer.cfg</h1>
+
+    <label for="printer">Tiskárna:</label>
+    <select id="printer">
+        <option value="SV06">Sovol SV06 Ace</option>
+        <option value="SV07">Sovol SV07</option>
+    </select>
+
+    <label for="hotend">Hotend:</label>
+    <select id="hotend">
+        <option value="stock">Originální</option>
+        <option value="dragon">Dragon Hotend</option>
+    </select>
+
+    <label for="abl">ABL senzor:</label>
+    <select id="abl">
+        <option value="stock">Originální Sovol</option>
+        <option value="bltouch">BLTouch</option>
+    </select>
+
+    <label for="fan">Větráky:</label>
+    <select id="fan">
+        <option value="stock">Originální 4010</option>
+        <option value="noctua">Noctua 4020</option>
+    </select>
+
+    <button onclick="generateConfig()">Vygeneruj printer.cfg</button>
+
+    <h2>📄 Výsledný printer.cfg:</h2>
+    <textarea id="output" readonly></textarea>
+
+    <div class="footer">
+        © 2025 Miroslav Bouda – BoudisprintOS | Generováno v prohlížeči, bez odesílání dat
+    </div>
+
+    <script>
+        function generateConfig() {
+            const printer = document.getElementById("printer").value;
+            const hotend = document.getElementById("hotend").value;
+            const abl = document.getElementById("abl").value;
+            const fan = document.getElementById("fan").value;
+
+            let cfg = "# BoudisprintOS printer.cfg (auto-generováno)\n";
+            cfg += `[printer]\nname: ${printer}\n`;
+            cfg += `\n[extruder]\nnozzle_diameter: 0.4\n`;
+            cfg += (hotend === "dragon" ? "heater_name: dragon_hotend\nmax_temp: 300\n" : "heater_name: stock_hotend\nmax_temp: 250\n");
+
+            cfg += "\n[bed_screws]\nlocation: front_left, front_right, rear_center\n";
+
+            cfg += "\n[probe]\ntype: ";
+            cfg += (abl === "bltouch" ? "bltouch\n" : "sovol_sensor\n");
+
+            cfg += "\n[fan]\ntype: ";
+            cfg += (fan === "noctua" ? "4020_noctua\n" : "4010_stock\n");
+
+            cfg += "\n# ... další sekce podle výběru uživatele\n";
+
+            document.getElementById("output").value = cfg;
+        }
+    </script>
+</body>
+</html>
